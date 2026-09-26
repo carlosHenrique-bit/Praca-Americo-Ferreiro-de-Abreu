@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Praça Americo Ferreira de Abreu</title>
+</head>
+
+<body>
+    <main onclick="noexecutar()">
+        <nav class="nav-bar">
+            <a href="#">
+                <li><img src="./assets/logo-prefeitura.png" alt="logo-prefeitura" width="100" height="40"></li>
+            </a>
+            <ul class="list-nav list-escondido">
+                <a href="#sobre">
+                    <li>Sobre</li>
+                </a>
+                <a href="">
+                    <li>História</li>
+                </a>
+                <a href="">
+                    <li>Eventos</li>
+                </a>
+            </ul>
+            <button class="btn-nav">
+                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+
+            </button>
+        </nav>
+
+        <section class="banner" aria-labelledby="hero">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); background-color: rgba(255, 255, 255,)0.2; z-index: -1;"></div>
+            <p id="p-banner">UM ESPAÇO DE TODOS</p>
+            <h1 class="title-banner">Praça Américo <strong color="#fff">Ferreira de Abreu</strong></h1>
+            <h3>Natureza, encontros e movimento no coração do bairro Santa Mônica.</h3>
+            <div class="conteiner-btn">
+                <button class="btn history">Nossa Historia</button>
+                <button class="btn">Eventos</button>
+            </div>
+        </section>
+
+        <section class="sobre">
+            <div class="conteiner-paragrafo">
+                <h2>Sobre a praça</h2>
+                <p>A Praça Américo Ferreira de Abreu é um ponto de convivência do bairro Santa Mônica, em Uberlândia.
+                    Entre árvores e caminhos, reúne espaço para caminhadas, esporte e momentos em família.</p>
+                <button class="saiba-mais">Saiba mais</button>
+            </div>
+            <div class="conteiner-img-praca">
+                <img id="img-praca" src="./assets/img-praca.png" alt="imagem_praça_americo_abreu" width="200px"
+                    height="200px">
+            </div>
+        </section>
+
+        <section class="exploracao">
+
+        </section>
+
+        <div class="line"></div>
+
+        <section class="localizacao">
+            <p class="p-localizacao">ENCONTRE A PRAÇA</p>
+            <h2>Venha conhecer.</h2>
+            <div class="conteiner-localizacao">
+                <iframe title="Mapa da Praça Américo Ferreira de Abreu, bairro Santa Mônica, Uberlândia"
+                    src="https://maps.google.com/maps?q=Pra%C3%A7a%20Am%C3%A9rico%20Ferreira%20de%20Abreu%2C%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="ajuda">
+            <p class="p-ajuda">SUA VOAZ IMPORTA</p>
+            <h2>Ajude-nos a melhorar a praça</h2>
+            <p><strong>Horario de atendimento </strong>12h às 17h</p>
+            <a href="tel:08009420291"><button>Telefone da Prefeitura Uberlândia</button></a>
+            <a href="mailto:ouvidoria@uberlandia.mg.gov.br"><button>Email da Prefeitura Uberlândia</button></a>
+        </section>
+        <footer>
+            <div class="p-footer">
+                <h2>Praça Amerio Ferreiro de Abreu</h2>
+                <p> Um espaço público dedicado ao lazer, cultura e convivência da comunidade. Conheça nossa história e
+                    participe dos eventos que transformam nossa praça.</p>
+            </div>
+            <div class="informacoes">
+                <div id="conteiner-localizacao">
+                    <p>Santa Mônica, Uberlândia - MG, 38408-166</p>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <p>&copy Praça Americo Ferreiro de Abreu. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
