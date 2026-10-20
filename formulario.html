@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cadastre seu evento | Praça Américo Ferreira de Abreu</title><link rel="stylesheet" href="style.css"></head>
+<body>        <nav class="nav-bar">
+            <a href="index.html" class="nav-logo-link">
+                <li><img src="./assets/logo-prefeitura.png" alt="logo-prefeitura" class="img-prefeitura-logo"></li>
+            </a>
+            <ul class="list-nav list-escondido" id="menu-lateral">
+                <a href="index.html#sobre">
+                    <li>Sobre</li>
+                </a>
+                <a href="index.html#estrutura">
+                    <li>Estrutura</li>
+                </a>
+                <a href="index.html#onde-fica">
+                    <li>Localização</li>
+                </a>
+                <a href="index.html#contato">
+                    <li>Ajuda</li>
+                </a>
+                <li><a href="formulario.html">Eventos</a></li>
+            </ul>
+            <button class="btn-nav" id="botao-menu">
+                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+<main class="formulario-main">
+    <a class="voltar" href="index.html#eventos">← Voltar para a praça</a>
+    <section class="formulario-card" aria-labelledby="titulo-formulario">
+        <p class="p-localizacao">UM ESPAÇO DE TODOS</p>
+        <h1 id="titulo-formulario">Seu próximo encontro começa aqui.</h1>
+        <p class="formulario-intro">Informe os detalhes do evento que você pretende realizar na praça.</p>
+        <form id="form-evento">
+            <div class="campo"><label for="nome">Nome</label><input id="nome" name="nome" type="text" placeholder="Digite seu nome" maxlength="50" autocomplete="name" required></div>
+            <div class="campo"><label for="tipo">Tipo de evento</label><input id="tipo" name="tipo" type="text" placeholder="Tipo de Evento..." maxlength="150" required></div>
+            <div class="campo"><label for="data">Data do evento</label><input id="data" name="data" type="date" required></div>
+            <div class="horarios">
+                <div class="campo"><label for="inicio">Horário de início</label><input id="inicio" name="inicio" type="time" placeholder="Horario de inicio..." aria-describedby="inicio-ajuda" required><small id="inicio-ajuda">Horario de inicio...</small></div>
+                <div class="campo"><label for="termino">Horário de término</label><input id="termino" name="termino" type="time" placeholder="Horario de termino..." aria-describedby="termino-ajuda" required><small id="termino-ajuda">Horario de termino...</small></div>
+            </div>
+            <div class="campo"><label for="local">Local do evento</label><select id="local" name="local" required><option value="">Selecione o local</option><option>Quadra</option><option>Estadio</option><option>Palco</option><option>Outros</option></select></div>
+            <div class="campo" id="campo-outro" hidden><label for="outro">Qual local?</label><input id="outro" name="outro" type="text" placeholder="Informe o local do evento" maxlength="150" disabled></div>
+            <p class="formulario-nota">Os dados serão salvos neste navegador. Depois de salvar, use o botão da confirmação para abrir seu aplicativo de e-mail e concluir o envio à ouvidoria. O cadastro não confirma reserva nem autorização de uso.</p>
+            <p id="form-erro" role="alert"></p>
+            <div class="form-acoes"><button class="saiba-mais" type="submit" id="enviar">Enviar</button><button class="btn" type="reset">Limpar</button></div>
+        </form>
+    </section>
+</main>
+<dialog id="confirmacao" aria-labelledby="confirmacao-titulo">
+    <div class="confirmacao-conteudo"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="3"/><path d="m18 32 9 9 20-21" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><h2 id="confirmacao-titulo"></h2><p id="confirmacao-texto"></p><a id="abrir-email" class="saiba-mais" hidden>Preparar e-mail para a Prefeitura</a><button type="button" id="fechar-confirmacao" class="btn">Fechar</button></div>
+</dialog>
+<script src="script.js"></script><script src="eventos.js"></script>
+</body></html>

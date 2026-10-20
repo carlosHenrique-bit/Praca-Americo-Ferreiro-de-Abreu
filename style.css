@@ -1,4 +1,3 @@
-/* Estrutura GLobal */
 * {
     margin: 0;
     padding: 0;
@@ -8,40 +7,79 @@
     text-decoration: none;
 }
 
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #eaeff2;
+    background-image: radial-gradient(#cbd4d9 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: #1a2421;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .line {
     width: 100%;
     height: 1px;
-    background-color: #d7e8aa;
+    background-color: rgba(28, 38, 34, 0.08);
+    margin: 40px 0;
 }
 
-body {
-    padding: 10px;
-}
-
-/* Estrutura GLobal */
+/* ==========================================================
+   Menu Superior (Navbar)
+   ========================================================== */
 .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 0 10px 0;
+    padding: 15px 20px;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.img-prefeitura-logo {
+    width: 165px;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.img-prefeitura-logo:hover {
+    transform: scale(1.03);
 }
 
 .list-nav {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
+    width: min(200px, 100vw);
+    height: 100vh;
     padding: 20px;
-    width: 200px;
-    height: 200px;
-    background-color: rgba(0, 135, 90, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 1;
+    box-sizing: border-box;
+    z-index: 1000;
+    background: transparent;
+    z-index: 10;
+    gap: 20px;
 }
 
 .list-escondido {
@@ -49,62 +87,656 @@ body {
 }
 
 .list-nav a {
-    color: #191919;
+    color: #2b4e1b;
     width: 100%;
-    height: 35px;
-    text-align: start;
-    border-bottom: 1px solid #191919;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.list-nav a:hover {
+    color: #ffffff;
 }
 
 .btn-nav {
     background-color: transparent;
     width: 50px;
     height: 50px;
+    cursor: pointer;
+    color: #1c2622;
 }
 
+/* ==========================================================
+   Seção Banner (Hero)
+   ========================================================== */
 .banner {
-    background-image: url(./assets/img-banner.jpg);
+    background-image: linear-gradient(rgba(0, 80, 50, 0.4), rgba(0, 60, 40, 0.5)), url(./assets/img-banner.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 10px;
-    object-fit: cover;
+    padding: 70px 40px;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 20px;
-    background-color: rgba(0, 135, 90, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    min-height: 320px;
+    justify-content: center;
 }
 
 #p-banner {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
-    color: #e8f4c8;
+    color: #ffffff;
+    letter-spacing: 2px;
 }
 
-.banner p, h3,h1 {
-    color: #def897;
+.banner h1,
+.banner h3 {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
+
+.banner h1 {
+    font-size: 2.5rem;
+}
+
 .title-banner strong {
     color: #fff;
+    font-weight: 800;
 }
 
 .banner h3 {
-    font-size: 14px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    max-width: 600px;
+    opacity: 0.9;
 }
 
 .conteiner-btn {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .btn {
-    width: 100px;
-    height: 40px;
-    border-radius: 7px;
-    
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #ffffff;
+    color: #00643c;
+}
+
+.btn.history {
+    background-color: #00643c;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+   Seção Sobre a Praça - EFEITO VIDRO TRANSPARENTE
+   ========================================================== */
+.sobre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+
+    /* Efeito de Vidro Fosco Semitransparente (Glassmorphism) */
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.04);
+}
+
+.conteiner-paragrafo {
+    flex: 1;
+}
+
+.sobre h2 {
+    font-size: 2rem;
+    color: #00643c;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #3b4542;
+    margin-bottom: 24px;
+}
+
+.saiba-mais {
+    background-color: #00643c;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.saiba-mais:hover {
+    background-color: #004d2e;
+}
+
+.conteiner-img-praca {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#img-praca {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================
+   Seção Localização (ARRUMADO: Design Limpo e Seguro para Rede Local)
+   ========================================================== */
+.localizacao {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.p-localizacao,
+.p-ajuda {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #00643c;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.localizacao h2,
+.ajuda h2 {
+    font-size: 2rem;
+    color: #1c2622;
+    margin-bottom: 30px;
+}
+
+/* Moldura híbrida simulando um mapa vetorial translúcido */
+.conteiner-localizacao-mapa-seguro {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    background-color: rgba(230, 237, 234, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-image: radial-gradient(#a3b5ae 1px, transparent 1px);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.01), 0 8px 32px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+.mapa-overlay-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 35px 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    max-width: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.mapa-icone-pin {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.mapa-overlay-content h3 {
+    font-size: 1.3rem;
+    color: #00643c;
+    font-weight: 700;
+}
+
+.mapa-overlay-content p {
+    font-size: 0.95rem;
+    color: #4a5551;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.btn-abrir-mapa-real {
+    background-color: #00643c;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-abrir-mapa-real:hover {
+    background-color: #004d2e;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   Seção Ajuda (Contatos)
+   ========================================================== */
+.ajuda {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.04);
+}
+
+.ajuda p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    color: #4a5551;
+}
+
+.ajuda button {
+    background-color: #ffffff;
+    color: #00643c;
+    border: 1px solid rgba(0, 100, 60, 0.15);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ajuda button:hover {
+    background-color: #00643c;
+    color: #ffffff;
+}
+
+/* ==========================================================
+   Rodapé (Footer)
+   ========================================================== */
+footer {
+    background-color: #121a17;
+    color: #ffffff;
+    padding: 50px 20px 20px 20px;
+    margin-top: 80px;
+}
+
+.p-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+footer h2 {
+    color: #def897;
+    font-size: 1.6rem;
+}
+
+footer p {
+    color: #92a39d;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.informacoes {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #def897;
+    font-weight: 500;
+}
+
+footer .line {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 25px 0;
+}
+
+footer>p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #53635e;
+}
+
+@media (max-width: 768px) {
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .conteiner-localizacao-mapa-seguro {
+        height: 320px;
+    }
+
+    .ajuda button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    #botao-menu {
+        display: none;
+    }
+
+    .list-nav,
+    .list-escondido,
+    .list-nav li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        gap: 24px;
+        box-shadow: none;
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        list-style: none;
+    }
+
+    .list-nav li {
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 8px;
+
+        color: #2b4e1b;
+        text-decoration: none;
+        font-weight: 600;
+
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .list-nav li:hover {
+        background-color: #2b4e1b;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+}
+
+/* Eventos: mesmas cores, fonte e superfícies do site. */
+[hidden] {
+    display: none !important;
+}
+
+.eventos-section {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 30px;
+}
+
+.eventos-section h2 {
+    font-size: 2rem;
+    color: #00643c;
+    margin: 10px 0;
+}
+
+.agenda-aviso,
+.formulario-intro,
+.formulario-nota {
+    color: #4a5551;
+    line-height: 1.6;
+}
+
+.agenda-aviso {
+    margin-bottom: 22px;
+}
+
+.evento-banner {
+    position: relative;
+    min-height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(110deg, rgba(0, 50, 30, .92), rgba(0, 50, 30, .45)), var(--foto-evento, url('assets/img-banner.jpg')) center/cover;
+    color: white;
+}
+
+.evento-banner h3 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.evento-banner p {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.evento-tag {
+    letter-spacing: 2px;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #def897;
+}
+
+.carrossel-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+.carrossel-controles button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #fff;
+    color: #00643c;
+    cursor: pointer;
+}
+
+.evento-cta {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+.formulario-main {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+.voltar {
+    display: inline-block;
+    color: #00643c;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+.formulario-card {
+    padding: 40px;
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, .04);
+}
+
+.formulario-card h1 {
+    color: #00643c;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 10px 0 16px;
+}
+
+.formulario-intro {
+    margin-bottom: 28px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    min-width: 0;
+    flex: 1;
+}
+
+.campo label {
+    font-weight: 600;
+    color: #294c3b;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #b9cac1;
+    border-radius: 8px;
+    background: #fff;
+    color: #1a2421;
+    font: inherit;
+}
+
+.campo small {
+    color: #53635e;
+}
+
+.horarios {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.formulario-nota {
+    font-size: .9rem;
+    margin-bottom: 22px;
+}
+
+.form-acoes {
+    display: flex;
+    gap: 12px;
+}
+
+button,
+a,
+input,
+select {
+    touch-action: manipulation;
+}
+
+:focus-visible {
+    outline: 3px solid #619d48;
+    outline-offset: 4px;
+}
+
+#form-erro {
+    color: #a12820;
+    margin-bottom: 14px;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+#confirmacao {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(460px, calc(100% - 36px));
+    max-height: 90vh;
+    padding: 32px;
+    border-radius: 20px;
+    color: #00643c;
+    box-shadow: 0 20px 70px #0003;
+}
+
+#confirmacao::backdrop {
+    background: rgba(10, 30, 20, .55);
+    backdrop-filter: blur(4px);
+}
+
+.confirmacao-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.confirmacao-conteudo p {
+    color: #4a5551;
+    line-height: 1.6;
+}
+
+@media(max-width:600px) {
+    .horarios {
+        flex-direction: column;
+        gap: 0
+    }
+
+    .formulario-card {
+        padding: 25px 20px
+    }
+
+    .eventos-section {
+        padding: 20px
+    }
+
+    .evento-banner {
+        padding: 28px;
+        min-height: 300px
+    }
 }
