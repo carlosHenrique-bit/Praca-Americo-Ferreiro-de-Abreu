@@ -1,17 +1,17 @@
-# Praça Américo Ferreira de Abreu 🌳
+# Praça Américo Ferreira de Abreu
 
 Website desenvolvido como projeto acadêmico da **ESAMC**, com o objetivo de apresentar informações sobre a Praça Américo Ferreira de Abreu, localizada em Uberlândia – MG.
 
 A proposta é facilitar o acesso a informações sobre a praça, sua estrutura, localização e eventos comunitários.
 
-## 🛠️ Tecnologias
+##Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript
 - LocalStorage
 
-## 💻 Funcionalidades
+## Funcionalidades
 
 - Apresentação de informações sobre a praça.
 - Navegação entre seções e páginas.
@@ -22,11 +22,11 @@ A proposta é facilitar o acesso a informações sobre a praça, sua estrutura, 
 
 **Observação:** os eventos são armazenados localmente no navegador. O cadastro não representa uma reserva ou autorização oficial.
 
-## 🚧 Status
+## Status
 
 **Em desenvolvimento — Projeto acadêmico ESAMC.**
 
-## 🚀 Como executar
+##Como executar
 
 Clone o repositório e abra o arquivo `index.html` no navegador.
 
@@ -34,6 +34,6 @@ Clone o repositório e abra o arquivo `index.html` no navegador.
 git clone https://github.com/carlosHenrique-bit/Praca-Americo-Ferreiro-de-Abreu.git
 ```
 
-## 👨‍💻 Desenvolvedor
+##Desenvolvedor
 
 [Carlos Henrique](https://github.com/carlosHenrique-bit)
