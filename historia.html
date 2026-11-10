@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História da Praça | Memorial Américo Ferreira de Abreu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+
+    <nav class="nav-bar">
+        <a class="nav-logo-link" href="#" onclick="abrirZoomLogo(event)" title="Clique para ampliar a logo">
+            <img class="img-prefeitura-logo" src="assets/logo-elo.png" alt="Elo Arquitetura e Urbanismo Logo">
+        </a>
+        
+        <span class="tagline-desktop">
+            Projetos Urbanos Sustentáveis • Santa Mônica
+        </span>
+
+        <button id="botao-menu" class="btn-nav">Menu</button>
+        <ul class="list-nav list-escondido">
+            <li><a href="index.html#historia">Início</a></li>
+            <li><a href="index.html#estrutura">Estrutura</a></li>
+            <li><a href="index.html#localizacao">Localização</a></li>
+            <li><a href="index.html#ajuda">Ajuda</a></li>
+            <li><a href="formulario.html">Eventos</a></li>
+        </ul>
+    </nav>
+
+    <main class="formulario-main">
+        <div style="margin-bottom: 25px;">
+            <a href="index.html" class="voltar" 
+               style="display: inline-block; padding: 12px 24px; background-color: #ffffff; color: #5d4440; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.2s ease;"
+               onmouseover="this.style.backgroundColor='#e8d82f'; this.style.transform='translateY(-2px)';" 
+               onmouseout="this.style.backgroundColor='#ffffff'; this.style.transform='translateY(0)';">
+                ← Voltar para a praça
+            </a>
+        </div>
+        
+        <div class="formulario-card" style="color: #eaeff2; line-height: 1.8;">
+            <h1 style="color: #e8d82f; font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 20px;">A História da Nossa Praça</h1>
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                A Praça Américo Ferreira de Abreu nasceu junto com a expansão e consolidação do bairro Santa Mônica, um dos maiores e mais vibrantes polos residenciais e comerciais de Uberlândia. Originalmente planejada como uma reserva verde institucional, o espaço se transformou com o passar das décadas em um ponto de encontro vital para gerações de famílias.
+            </p>
+
+            <h2 style="color: #e8d82f; font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px;">Origem e Identidade Comunitária</h2>
+            <p style="margin-bottom: 20px;">
+                Batizada em homenagem a uma das figuras pioneiras no desenvolvimento local, a praça reflete o espírito de cooperação dos moradores do Santa Mônica. A sua proximidade geográfica com a Paróquia Matriz Santa Mônica estabeleceu um laço histórico indissociável entre o crescimento urbano e as manifestações culturais e religiosas da região.
+            </p>
+
+            <h2 style="color: #e8d82f; font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px;">O Papel Ecológico no Coração do Bairro</h2>
+            <p style="margin-bottom: 20px;">
+                Ao longo dos anos, enquanto o asfalto e as construções avançavam pelo bairro, a praça permaneceu firme como um verdadeiro "pulmão verde". A sua densa arborização nativa preserva um microclima ameno, essencial para mitigar as ilhas de calor e oferecer abrigo para pássaros típicos do Cerrado mineiro que circulam por Uberlândia.
+            </p>
+
+            <div style="background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border-left: 4px solid #e8d82f; margin-top: 35px;">
+                <h3 style="color: #e8d82f; margin-bottom: 10px; font-size: 1.2rem;">O Futuro da Praça</h3>
+                <p style="margin-bottom: 0; font-size: 0.95rem;">
+                    Hoje, através dos estudos de diagnóstico conduzidos pela <strong>Elo Arquitetura e Urbanismo</strong>, a praça prepara-se para um novo capítulo. O plano de requalificação busca harmonizar esse legado histórico com as demandas modernas de acessibilidade, infraestrutura sustentável e espaços dinâmicos para novos eventos e convívio social.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Zoom da Logo -->
+    <div id="modal-zoom-logo" class="modal-zoom caixa-oculta" onclick="fecharZoomLogo()">
+        <span class="fechar-zoom">&times;</span>
+        <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada" onclick="event.stopPropagation()">
+    </div>
+
+    <script src="menu.js"></script>
+    <script>
+        function abrirZoomLogo(event) {
+            if (event) event.preventDefault();
+            document.getElementById('modal-zoom-logo').classList.remove('caixa-oculta');
+            document.body.style.overflow = 'hidden';
+        }
+        function fecharZoomLogo() {
+            document.getElementById('modal-zoom-logo').classList.add('caixa-oculta');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
