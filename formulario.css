@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #e8d82f; /* Fundo geral do site: Ipê Amarelo */
+    background-size: 24px 24px;
+    color: #1a2421;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+}
+
+.container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    margin: 40px 0;
+}
+
+/* Barra de Navegação Superior Escura */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+    background-color: #5d4440; /* Fundo: Tronco do Ipê */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+/* Caixa Preta com Destaque Clicável para a Logo */
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    background-color: #000000; /* Fundo preto sólido atrás da logo */
+    padding: 8px 14px;         /* Espaçamento interno para a marca respirar */
+    border-radius: 12px;       /* Cantos arredondados sutis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra para ressaltar do fundo marrom */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in; /* Ícone de lupa indicando que é clicável */
+}
+
+.nav-logo-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.img-prefeitura-logo {
+    width: 110px; 
+    height: auto;
+    display: block;
+}
+
+.list-nav {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(200px, 100vw);
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: rgba(93, 68, 64, 0.95); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10;
+    gap: 20px;
+}
+
+.list-escondido {
+    display: none; 
+}
+
+.list-nav a {
+    color: #ffffff;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.list-nav a:hover {
+    opacity: 0.8;
+}
+
+.btn-nav {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: #e8d82f;
+}

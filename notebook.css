@@ -1,0 +1,47 @@
+@media (min-width: 1024px) {
+    #botao-menu { display: none; }
+    .list-nav, .list-escondido, .list-nav li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        background: transparent;
+        box-shadow: none;
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .list-nav li {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: #e8d82f; 
+        border: 2px solid #e8d82f; 
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .list-nav li:hover {
+        background-color: #e8d82f;
+        color: #5d4440; 
+        transform: translateY(-2px);
+    }
+    
+    /* LAPIDAÇÃO DA TAGLINE: Estilo Corporativo Sofisticado */
+    .tagline-desktop {
+        display: block !important;
+        color: #ffffff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 2.2px;
+        text-transform: uppercase; /* Passa o texto para caixa alta elegante */
+        padding-left: 16px;
+        border-left: 3px solid #e8d82f; /* Borda esquerda no tom Ipê Amarelo */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        max-width: 400px;
+        line-height: 1.4;
+    }
+}
