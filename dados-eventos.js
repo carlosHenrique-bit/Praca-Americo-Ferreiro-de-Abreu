@@ -32,34 +32,35 @@ const EVENTOS_PADRAO = [
     }
 ];
 
-// Inicializa o banco de dados no LocalStorage se estiver vazio
-function inicializarBancoDados() {
-    if (!localStorage.getItem('banco_eventos_praca')) {
-        localStorage.setItem('banco_eventos_praca', JSON.stringify(EVENTOS_PADRAO));
-    }
+// Compatibilidade entre o formulário e a agenda da página inicial.
+function lerEventos() {
+    const conteudo = localStorage.getItem('banco_eventos_praca');
+    if (conteudo === null) return EVENTOS_PADRAO.map(evento => ({ ...evento }));
+    const eventos = JSON.parse(conteudo);
+    if (!Array.isArray(eventos)) throw new Error('Formato inválido da agenda salva.');
+    return eventos.filter(evento => evento && typeof evento === 'object');
 }
-
-// Busca todos os eventos ativos
-function obterEventos() {
-    inicializarBancoDados();
-    return JSON.parse(localStorage.getItem('banco_eventos_praca'));
+function obterEventos() { return lerEventos(); }
+function normalizarTexto(valor) {
+    return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
 }
-
-// Salva um novo evento de forma real
+function existeConflito(novo, eventos) {
+    const localNovo = normalizarTexto(novo.localDescricao || (novo.local === 'Outros' ? novo.outro : novo.local));
+    return eventos.some(evento => evento.data === novo.data &&
+        normalizarTexto(evento.localDescricao || (evento.local === 'Outros' ? evento.outro : evento.local)) === localNovo &&
+        novo.inicio < evento.termino && novo.termino > evento.inicio);
+}
 function salvarEvento(novoEvento) {
-    const eventosAtuais = obterEventos();
-    
-    // Identifica automaticamente a categoria com base nas palavras-chave do tipo
-    const tipoLower = novoEvento.tipo.toLowerCase();
-    let categoria = 'cultural'; // Categoria padrão
-    if (tipoLower.includes('triduo') || tipoLower.includes('missa') || tipoLower.includes('reza') || tipoLower.includes('religios')) {
-        categoria = 'religioso';
-    } else if (tipoLower.includes('basquete') || tipoLower.includes('futebol') || tipoLower.includes('esporte') || tipoLower.includes('treino')) {
-        categoria = 'esportivo';
-    }
-    
-    novoEvento.categoria = categoria;
-    eventosAtuais.push(novoEvento);
-    localStorage.setItem('banco_eventos_praca', JSON.stringify(eventosAtuais));
-    return true;
+    const eventos = lerEventos();
+    if (existeConflito(novoEvento, eventos)) throw new Error('Já existe evento nesse local e horário.');
+    const tipo = normalizarTexto(novoEvento.tipo);
+    const categoria = /triduo|missa|reza|religio|culto|celebra|quermesse/.test(tipo) ? 'religioso'
+        : /basquete|futebol|esport|treino|torneio|corrida|volei/.test(tipo) ? 'esportivo' : 'cultural';
+    const evento = { ...novoEvento, categoria,
+        id: globalThis.crypto?.randomUUID?.() || 'evento-' + Date.now() + '-' + Math.random().toString(36).slice(2),
+        localDescricao: novoEvento.localDescricao || (novoEvento.local === 'Outros' ? novoEvento.outro : novoEvento.local),
+        outro: novoEvento.local === 'Outros' ? (novoEvento.localDescricao || novoEvento.outro || '') : '' };
+    eventos.push(evento);
+    localStorage.setItem('banco_eventos_praca', JSON.stringify(eventos));
+    return evento;
 }

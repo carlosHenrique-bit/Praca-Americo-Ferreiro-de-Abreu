@@ -17,14 +17,8 @@
             Projetos Urbanos Sustentáveis • Santa Mônica
         </span>
 
-        <button id="botao-menu" class="btn-nav">Menu</button>
-        <ul class="list-nav list-escondido">
-            <li><a href="index.html#historia">Sobre</a></li>
-            <li><a href="index.html#estrutura">Estrutura</a></li>
-            <li><a href="index.html#localizacao">Localização</a></li>
-            <li><a href="index.html#ajuda">Ajuda</a></li>
-            <li><a href="formulario.html">Eventos</a></li>
-        </ul>
+        <button id="botao-menu" class="btn-nav" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button>
+        <ul class="list-nav list-escondido" id="menu-principal"><li><a href="historia.html">História</a></li><li><a href="index.html#pavilhao">Pavilhão</a></li><li><a href="index.html#galeria">Galeria</a></li><li><a href="index.html#localizacao">Localização</a></li><li><a href="index.html#ajuda">Ajuda</a></li><li><a href="formulario.html">Eventos</a></li></ul>
     </nav>
 
     <main class="formulario-main">
@@ -85,9 +79,7 @@
                     <input type="text" id="outro" placeholder="Especifique o local...">
                 </div>
 
-                <p class="formulario-nota">
-                    Os dados serão salvos neste navegador. Depois de salvar, use o botão da confirmação para abrir seu aplicativo de e-mail e concluir o envio à ouvidoria. O cadastro não confirma reserva nem autorização de uso.
-                </p>
+                <p class="formulario-nota">Ao enviar, o evento será salvo neste navegador e exibido na seção Eventos Cadastrados da página inicial. O cadastro não confirma reserva nem autorização de uso da praça.</p>
 
                 <p id="form-erro" class="caixa-oculta"></p>
 
@@ -103,25 +95,12 @@
     <div id="erro-campos" class="mensagem-erro caixa-oculta">Preencha todos os campos corretamente. Clique nesta mensagem para fechar.</div>
     <div id="erro-evento" class="mensagem-erro caixa-oculta">Já existe outro evento nesse dia, horário e local. Escolha outro horário ou local. Clique para fechar.</div>
 
-    <div id="confirmacao" class="fundo-confirmacao caixa-oculta">
-        <div class="caixa-confirmacao" id="bloco-confirmacao">
-            <h2>Evento salvo neste navegador</h2>
-            <p>Prepare o e-mail pelo botão abaixo e conclua o envio no seu aplicativo. O cadastro não confirma autorização da Prefeitura.</p>
-            <p id="aviso-armazenamento"></p>
-            <div class="form-acoes">
-                <a id="abrir-email" class="btn history" href="#">Preparar e-mail para a Prefeitura</a>
-                <button id="fechar-confirmacao" class="btn">Fechar</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal de Zoom da Logo -->
     <div id="modal-zoom-logo" class="modal-zoom caixa-oculta" onclick="fecharZoomLogo()">
         <span class="fechar-zoom">&times;</span>
         <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada" onclick="event.stopPropagation()">
     </div>
 
-    <script src="menu.js"></script>
     <script src="dados-eventos.js"></script>
     <script src="formulario.js"></script>
     <script>
@@ -135,5 +114,34 @@
             document.body.style.overflow = 'auto';
         }
     </script>
+<script>
+(() => {
+    const botao = document.getElementById('botao-menu');
+    const lista = document.getElementById('menu-principal');
+    if (!botao || !lista) return;
+    const fechar = () => {
+        lista.classList.add('list-escondido');
+        botao.setAttribute('aria-expanded', 'false');
+        botao.setAttribute('aria-label', 'Abrir menu');
+    };
+    botao.addEventListener('click', () => {
+        const aberto = lista.classList.contains('list-escondido');
+        lista.classList.toggle('list-escondido', !aberto);
+        botao.setAttribute('aria-expanded', String(aberto));
+        botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+    document.addEventListener('click', event => {
+        if (!lista.contains(event.target) && !botao.contains(event.target)) fechar();
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !lista.classList.contains('list-escondido')) {
+            fechar(); botao.focus();
+        }
+    });
+    lista.querySelectorAll('a').forEach(link => link.addEventListener('click', fechar));
+    window.matchMedia('(min-width: 1025px)').addEventListener('change', fechar);
+})();
+</script>
 </body>
 </html>
+

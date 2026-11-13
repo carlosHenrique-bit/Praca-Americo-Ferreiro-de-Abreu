@@ -1,115 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-    list-style: none;
-    text-decoration: none;
+/* Formulário de eventos — Praça Américo Ferreira de Abreu */
+:root {
+    --amarelo:#e8d82f;
+    --marrom:#5d4440;
+    --dourado:#aa8833;
+    --texto:#eaeff2;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:var(--amarelo); color:#1a2421; min-height:100vh; }
+a { text-decoration:none; }
+button,input,select,textarea { font:inherit; }
+button,a,input,select,textarea { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+.container { width:100%; margin:0 auto; }
+/* Navegação compacta até 1024 px. */
+.nav-bar { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:15px 20px; position:sticky; top:0; width:100%; z-index:100; background:var(--marrom); border-bottom:1px solid #ffffff1a; box-shadow:0 4px 10px #00000026; }
+.nav-logo-link { display:flex; align-items:center; background:#000; padding:8px 14px; border-radius:12px; box-shadow:0 4px 12px #0006; cursor:zoom-in; transition:transform .2s; flex-shrink:0; }
+.nav-logo-link:hover { transform:scale(1.03); }
+.img-prefeitura-logo { display:block; width:110px; height:auto; }
+.tagline-desktop { display:none; }
+.btn-nav { width:60px; min-height:48px; padding:8px; background:transparent; color:var(--amarelo); border:1px solid var(--amarelo); border-radius:8px; font-weight:700; }
+.icon-menu { width:30px; height:30px; display:block; margin:auto; }
+.list-nav { position:absolute; top:100%; right:0; display:flex; flex-direction:column; gap:8px; width:min(260px,100vw); max-height:calc(100dvh - 160px); overflow-y:auto; padding:20px; list-style:none; background:rgba(93,68,64,.98); border-radius:0 0 0 14px; box-shadow:0 12px 24px #0003; }
+.list-nav a { display:block; color:#fff; padding:12px; border-radius:8px; font-size:1rem; font-weight:600; }
+.list-nav a:hover { background:#ffffff14; }
+.list-escondido { display:none; }
+/* Conteúdo e campos. */
+.formulario-main { width:100%; max-width:850px; margin:35px auto 60px; padding:0 20px; }
+.voltar { display:inline-flex; padding:12px 24px; background:#fff; color:var(--marrom); border-radius:8px; font-weight:600; box-shadow:0 4px 12px #0000001a; transition:transform .2s; }
+.voltar:hover { transform:translateY(-2px); }
+.formulario-card { padding:40px; background:var(--marrom); color:var(--texto); border:1px solid #ffffff1a; border-radius:20px; box-shadow:0 8px 32px #00000026; }
+.formulario-card h1 { color:var(--amarelo); font-size:clamp(1.8rem,4vw,2.4rem); line-height:1.25; margin:0 0 16px; }
+.formulario-intro { color:var(--texto); font-size:1.05rem; line-height:1.7; margin-bottom:30px; }
+#form-evento { width:100%; }
+.campo { display:flex; flex-direction:column; gap:9px; min-width:0; flex:1; margin-bottom:22px; }
+.campo label { color:var(--amarelo); font-weight:600; line-height:1.5; }
+.campo input,.campo select,.campo textarea { width:100%; min-width:0; min-height:50px; padding:13px 14px; border:1px solid #cad1cb; border-radius:8px; background:#fff; color:#1a2421; color-scheme:light; transition:border-color .2s,box-shadow .2s; }
+.campo input::placeholder,.campo textarea::placeholder { color:#69716d; opacity:1; }
+.campo input:hover,.campo select:hover { border-color:var(--dourado); }
+.campo input:focus,.campo select:focus,.campo textarea:focus { outline:2px solid var(--amarelo); outline-offset:3px; border-color:var(--amarelo); box-shadow:0 0 0 5px #e8d82f1a; }
+.campo input:disabled { background:#e3e4df; color:#6c706b; cursor:not-allowed; }
+.campo small { color:var(--texto); line-height:1.6; }
+.horarios { display:flex; gap:20px; }
+.formulario-nota { font-size:.92rem; line-height:1.75; padding:18px 20px; margin:4px 0 24px; background:#00000026; border-left:3px solid var(--amarelo); border-radius:10px; color:var(--texto); }
+.form-acoes { display:flex; flex-wrap:wrap; align-items:stretch; gap:12px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; text-align:center; gap:8px; min-height:48px; padding:12px 24px; border:1px solid transparent; border-radius:8px; background:#fff; color:var(--marrom); font-weight:600; line-height:1.4; transition:background .2s,transform .2s,box-shadow .2s; }
+.btn.history { background:var(--dourado); color:#fff; border-color:#ffffff33; }
+.btn:hover { transform:translateY(-2px); box-shadow:0 4px 12px #0003; background:#f4f0df; }
+.btn.history:hover { background:#947528; }
+.btn:disabled { opacity:.6; cursor:wait; transform:none; }
+/* Estados controlados pelo formulario.js. */
+.caixa-oculta { display:none!important; }
+#form-erro { margin-bottom:20px; padding:14px 18px; border:1px solid #ffb8ab; background:#fff0ec; color:#802c20; border-radius:8px; line-height:1.6; }
+.mensagem-erro { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:6000; width:min(560px,calc(100% - 32px)); max-height:50dvh; overflow:auto; background:#fff0ec; color:#802c20; border:1px solid #b95b48; border-left:5px solid #a43d2b; border-radius:12px; padding:20px 24px; box-shadow:0 12px 35px #0004; line-height:1.7; cursor:pointer; }
+.fundo-confirmacao { position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center; padding:24px; overflow:auto; background:#000b; backdrop-filter:blur(6px); }
+.caixa-confirmacao { width:100%; max-width:600px; max-height:calc(100dvh - 48px); overflow:auto; padding:34px; background:var(--marrom); color:var(--texto); border:1px solid #e8d82f66; border-radius:20px; box-shadow:0 20px 60px #0006; }
+.caixa-confirmacao h2 { color:var(--amarelo); font-size:clamp(1.4rem,4vw,1.8rem); margin-bottom:16px; line-height:1.3; }
+.caixa-confirmacao p { line-height:1.75; margin-bottom:22px; }
+#aviso-armazenamento:empty { display:none; }
+#aviso-armazenamento:not(:empty) { background:#fff0ec; color:#802c20; padding:14px; border-radius:8px; }
+/* Ampliação da logo existente no HTML. */
+.modal-zoom { position:fixed; inset:0; z-index:5000; display:flex; align-items:center; justify-content:center; padding:70px 20px 24px; background:#000e; backdrop-filter:blur(8px); cursor:zoom-out; }
+.img-zoom-conteudo { max-width:min(550px,90vw); max-height:75dvh; width:auto; height:auto; object-fit:contain; background:#000; border:1px solid #e8d82f33; border-radius:20px; padding:24px; box-shadow:0 20px 50px #0009; cursor:default; }
+.fechar-zoom { position:absolute; top:16px; right:28px; font-size:45px; line-height:1; font-weight:700; color:var(--amarelo); cursor:pointer; padding:5px; }
+.line { height:1px; background:#ffffff26; margin:35px 0; }
+a:focus-visible,button:focus-visible { outline:3px solid var(--amarelo); outline-offset:4px; }
+.voltar:focus-visible { outline-color:var(--marrom); }
+/* Navbar horizontal em telas maiores de 1024 px. */
+@media(min-width:1025px) {
+    .nav-bar { display:grid; grid-template-columns:auto minmax(150px,220px) minmax(0,1fr); gap:clamp(16px,2vw,28px); padding:16px 20px; }
+    .tagline-desktop { display:block; padding-left:16px; border-left:2px solid var(--amarelo); color:#fff; font-size:.78rem; line-height:1.4; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
+    .btn-nav { display:none; }
+    .list-nav,.list-nav.list-escondido { display:flex; position:static; flex-direction:row; justify-content:flex-end; align-items:center; gap:clamp(10px,1.6vw,24px); width:100%; max-height:none; padding:0; overflow:visible; background:transparent; border-radius:0; box-shadow:none; }
+    .list-nav a { display:flex; align-items:center; justify-content:center; padding:12px clamp(12px,1.6vw,24px); border:2px solid var(--amarelo); border-radius:8px; color:#fff; font-size:clamp(.85rem,1.15vw,1rem); font-weight:700; white-space:nowrap; }
+    .list-nav a:hover { background:var(--amarelo); color:var(--marrom); }
+}
+@media(max-width:600px) {
+    .nav-bar { padding:12px 16px; }
+    .img-prefeitura-logo { width:85px; }
+    .formulario-main { padding:0 16px; margin-top:24px; }
+    .formulario-card { padding:28px 20px; }
+    .horarios { flex-direction:column; gap:0; }
+    .form-acoes .btn { flex:1 1 120px; }
+    .formulario-nota { padding:16px; }
+    .caixa-confirmacao { padding:26px 20px; }
+    .caixa-confirmacao .form-acoes { flex-direction:column; }
+    .caixa-confirmacao .form-acoes .btn { flex:0 1 auto; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+
+/* Espaçamento uniforme entre os links, sem distribuir o espaço livre. */
+@media (min-width:1025px) {
+    .nav-bar { grid-template-columns:auto minmax(130px,220px) minmax(0,1fr); gap:clamp(14px,1.6vw,24px); }
+    .list-nav, .list-nav.list-escondido { justify-content:flex-end; gap:16px; }
+    .list-nav li { flex:0 0 auto; }
+    .list-nav a { width:auto; }
 }
 
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #e8d82f; /* Fundo geral do site: Ipê Amarelo */
-    background-size: 24px 24px;
-    color: #1a2421;
-    overflow-x: hidden; 
-    scroll-behavior: smooth; 
-}
-
-.container {
-    width: 100%;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    /* padding: 0 20px; */
-}
-
-.line {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.15); 
-    margin: 40px 0;
-}
-
-/* Barra de Navegação Superior Escura */
-.nav-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 20px;
-    align-items: center;
-    background-color: #5d4440; /* Fundo: Tronco do Ipê */
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    position: sticky;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
-
-/* Caixa Preta com Destaque Clicável para a Logo */
-.nav-logo-link {
-    display: flex;
-    align-items: center;
-    background-color: #000000; /* Fundo preto sólido atrás da logo */
-    padding: 8px 14px;         /* Espaçamento interno para a marca respirar */
-    border-radius: 12px;       /* Cantos arredondados sutis */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra para ressaltar do fundo marrom */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: zoom-in; /* Ícone de lupa indicando que é clicável */
-}
-
-.nav-logo-link:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-}
-
-.img-prefeitura-logo {
-    width: 110px; 
-    height: auto;
-    display: block;
-}
-
-.list-nav {
-    position: fixed;
-    top: 0px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    width: min(200px, 100vw);
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 1000;
-    background-color: rgba(93, 68, 64, 0.95); 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 10;
-    gap: 20px;
-}
-
-.list-escondido {
-    display: none; 
-}
-
-.list-nav a {
-    color: #ffffff;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-bottom: none;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-
-.list-nav a:hover {
-    opacity: 0.8;
-}
-
-.btn-nav {
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    color: #e8d82f;
+/* Menu móvel: mesmo ícone e painel lateral do index.html. */
+@media (max-width:1024px) {
+    .nav-bar { display:flex; justify-content:space-between; padding:15px 20px; }
+    .img-prefeitura-logo { width:110px; }
+    .tagline-desktop { display:none; }
+    .btn-nav { display:block; width:50px; height:50px; min-height:0; padding:0; border:0; border-radius:0; background:transparent; color:#e8d82f; cursor:pointer; }
+    .icon-menu { display:block; width:50px; height:50px; margin:0; pointer-events:none; }
+    .list-nav { position:fixed; inset:0 0 auto auto; display:flex; flex-direction:column; justify-content:flex-start; align-items:stretch; width:min(200px,100vw); height:100vh; height:100dvh; max-height:none; gap:20px; padding:20px; margin:0; overflow-y:auto; list-style:none; border:0; border-radius:0; box-shadow:none; background:rgba(93,68,64,.95); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:1000; }
+    .list-nav.list-escondido { display:none; }
+    .list-nav li { display:block; flex:0 0 auto; padding:0; margin:0; border:0; }
+    .list-nav a { display:block; width:100%; padding:0; border:0; border-radius:0; background:transparent; color:#fff; font-size:1.1rem; line-height:1.2; font-weight:500; }
+    .list-nav a:hover { opacity:.8; background:transparent; }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,27 @@
     <link rel="stylesheet" href="tablet.css">
     <link rel="stylesheet" href="notebook.css">
 </head>
+
 <body>
 
     <nav class="nav-bar">
         <a class="nav-logo-link" href="#" onclick="abrirZoomLogo(event)" title="Clique para ampliar a logo">
             <img class="img-prefeitura-logo" src="assets/logo-elo.png" alt="Elo Arquitetura e Urbanismo Logo">
         </a>
-        
+
         <span class="tagline-desktop">
             Projetos Urbanos Sustentáveis • Santa Mônica
         </span>
 
-        <button id="botao-menu" class="btn-nav"><svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="4" y1="6" x2="20" y2="6"/>
-      <line x1="4" y1="12" x2="20" y2="12"/>
-      <line x1="4" y1="18" x2="20" y2="18"/>
-    </svg></button>
+        <button id="botao-menu" class="btn-nav"><svg class="icon-menu" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+            </svg></button>
         <ul class="list-nav list-escondido">
             <li><a href="historia.html">História</a></li>
-            <li><a href="#estrutura">Estrutura</a></li>
             <li><a href="#pavilhao">Pavilhão</a></li>
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#localizacao">Localização</a></li>
@@ -51,7 +54,10 @@
             <div class="conteiner-paragrafo">
                 <h2>Sobre a praça</h2>
                 <p>
-                    A Praça Américo Ferreira de Abreu é um dos principais pontos de convivência, lazer e integração comunitária do bairro Santa Mônica, in Uberlândia. Reconhecido por sua atmosfera acolhedora e densamente arborizada, o espaço desempenha um papel fundamental na saúde urbana dos moradores locais, atuando como um refúgio verde que estimula a prática de exercícios e o descanso ao ar livre.
+                    A Praça Américo Ferreira de Abreu é um dos principais pontos de convivência, lazer e integração
+                    comunitária do bairro Santa Mônica, in Uberlândia. Reconhecido por sua atmosfera acolhedora e
+                    densamente arborizada, o espaço desempenha um papel fundamental na saúde urbana dos moradores
+                    locais, atuando como um refúgio verde que estimula a prática de exercícios e o descanso ao ar livre.
                 </p>
                 <a href="historia.html" class="saiba-mais">Ler História Completa</a>
             </div>
@@ -64,16 +70,24 @@
         <section class="eventos-section" id="estrutura">
             <h2>Uso Comunitário e Ecossistema</h2>
             <p class="agenda-aviso">
-                Mais do que uma área de passagem, a praça carrega uma forte vocação de convivência social e preservação ambiental para o bairro Santa Mônica. Seus principais pilares de apropriação são:
+                Mais do que uma área de passagem, a praça carrega uma forte vocação de convivência social e preservação
+                ambiental para o bairro Santa Mônica. Seus principais pilares de apropriação são:
             </p>
             <ul>
-                <li><strong>Eventos e Integração Local:</strong> Devido à proximidade com a Paróquia Matriz Santa Mônica, o espaço da praça é frequentemente utilizado como extensão comunitária para a realização de tríduos, festividades religiosas e feiras beneficentes ao ar livre.</li>
-                <li><strong>Refúgio de Biodiversidade:</strong> A praça conta com árvores de médio e grande porte integradas à fauna urbana regional, servindo de abrigo e descanso para espécies de pássaros nativos no meio da malha urbana de Uberlândia.</li>
-                <li><strong>Potencial de Requalificação:</strong> Por focar no convívio e no ecossistema, o espaço é o cenário ideal para projetos ambientais, plantio de mudas do Cerrado e encontros socioculturais dos moradores.</li>
+                <li><strong>Eventos e Integração Local:</strong> Devido à proximidade com a Paróquia Matriz Santa
+                    Mônica, o espaço da praça é frequentemente utilizado como extensão comunitária para a realização de
+                    tríduos, festividades religiosas e feiras beneficentes ao ar livre.</li>
+                <li><strong>Refúgio de Biodiversidade:</strong> A praça conta com árvores de médio e grande porte
+                    integradas à fauna urbana regional, servindo de abrigo e descanso para espécies de pássaros nativos
+                    no meio da malha urbana de Uberlândia.</li>
+                <li><strong>Potencial de Requalificação:</strong> Por focar no convívio e no ecossistema, o espaço é o
+                    cenário ideal para projetos ambientais, plantio de mudas do Cerrado e encontros socioculturais dos
+                    moradores.</li>
             </ul>
 
-            <h2 style="margin-top: 40px;">Eventos cadastrados</h2>
-            <p class="agenda-aviso">Filtre a agenda e visualize as solicitações salvas neste navegador de forma dinâmica.</p>
+            <h2 id="eventos-cadastrados" style="margin-top: 40px; scroll-margin-top: 180px;">Eventos cadastrados</h2>
+            <p class="agenda-aviso">Filtre a agenda e visualize as solicitações salvas neste navegador de forma
+                dinâmica.</p>
 
             <!-- Filtros por Categoria com Estilo do Site -->
             <div style="display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; justify-content: center;">
@@ -100,16 +114,28 @@
             </div>
         </section>
         <!-- MODIFICADO: Pavilhão usando a estrutura flex e ID nativo idêntico à seção História para não quebrar -->
-        <section id="pavilhao" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 40px; padding: 50px 30px; max-width: 1200px; margin: 30px auto; background-color: #5d4440; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+        <section id="pavilhao"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 40px; padding: 50px 30px; max-width: 1200px; margin: 30px auto; background-color: #5d4440; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
             <div class="conteiner-paragrafo">
                 <h2 style="font-size: 2rem; color: #e8d82f; margin-bottom: 20px;">Pavilhão Multiuso de Apoio</h2>
                 <p style="font-size: 1.1rem; line-height: 1.6; color: #eaeff2; margin-bottom: 24px;">
-                    Como elemento central da proposta de requalificação urbana desenvolvida pela <strong>Elo Arquitetura e Urbanismo</strong>, o novo pavilhão foi concebido para dar suporte logístico e infraestrutura técnica adequada às festividades tradicionais do bairro Santa Mônica.
+                    Como elemento central da proposta de requalificação urbana desenvolvida pela <strong>Elo Arquitetura
+                        e Urbanismo</strong>, o novo pavilhão foi concebido para dar suporte logístico e infraestrutura
+                    técnica adequada às festividades tradicionais do bairro Santa Mônica.
                 </p>
                 <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong style="color: #e8d82f;">Estrutura Leve e Sustentável:</strong> Cobertura modular projetada para captação de água pluvial e proteção solar, gerando conforto térmico sem agredir a vegetação arbórea existente.</p>
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong style="color: #e8d82f;">Infraestrutura Técnica:</strong> Pontos embutidos de energia elétrica, iluminação em LED cenográfica e conexões hidráulicas planejadas para atender barracas de feiras e palcos temporários.</p>
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong style="color: #e8d82f;">Acessibilidade Universal:</strong> Piso plano intertravado tátil integrado às rotas principais da praça, facilitando a circulação de pedestres, idosos e cadeirantes em dias de grande fluxo.</p>
+                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
+                            style="color: #e8d82f;">Estrutura Leve e Sustentável:</strong> Cobertura modular projetada
+                        para captação de água pluvial e proteção solar, gerando conforto térmico sem agredir a vegetação
+                        arbórea existente.</p>
+                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
+                            style="color: #e8d82f;">Infraestrutura Técnica:</strong> Pontos embutidos de energia
+                        elétrica, iluminação em LED cenográfica e conexões hidráulicas planejadas para atender barracas
+                        de feiras e palcos temporários.</p>
+                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
+                            style="color: #e8d82f;">Acessibilidade Universal:</strong> Piso plano intertravado tátil
+                        integrado às rotas principais da praça, facilitando a circulação de pedestres, idosos e
+                        cadeirantes em dias de grande fluxo.</p>
                 </div>
             </div>
             <div class="conteiner-img-praca">
@@ -120,29 +146,44 @@
         <!-- Seção Galeria Comparativa usando as classes corretas do style.css -->
         <section id="galeria" class="eventos-section">
             <h2>Evolução do Espaço Urbano</h2>
-            <p class="agenda-aviso">Compare o levantamento fotográfico do estado atual com o modelo tridimensional das melhorias propostas.</p>
+            <p class="agenda-aviso">Compare o levantamento fotográfico do estado atual com o modelo tridimensional das
+                melhorias propostas.</p>
             <div class="cotainer-galery">
-                <div style="display: flex; flex-direction: row; gap: 25px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+                <div
+                    style="display: flex; flex-direction: row; gap: 25px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
                     <!-- Bloco Estado Atual -->
-                    <div style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <h3 style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">Estado Atual da Praça</h3>
-                        <img src="assets/img-banner.jpg" alt="Foto Atual da Praça" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
-                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Diagnóstico de calçadas danificadas, áreas com desgaste de solo e pontos escuros com necessidade de reforço luminotécnico.</p>
+                    <div
+                        style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                        <h3
+                            style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">
+                            Estado Atual da Praça</h3>
+                        <img src="assets/img-banner.jpg" alt="Foto Atual da Praça"
+                            style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
+                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Diagnóstico de calçadas
+                            danificadas, áreas com desgaste de solo e pontos escuros com necessidade de reforço
+                            luminotécnico.</p>
                     </div>
                     <!-- Bloco Projeto em Desenvolvimento -->
-                    <div style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid #e8d82f; text-align: center;">
-                        <h3 style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">Projeto em Desenvolvimento</h3>
-                        <img src="assets/img-banner.jpg" alt="Perspectiva 3D do Projeto" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
-                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Nova paginação de piso tátil, preservação total da cobertura vegetal nativa, mobiliário urbano sustentável e iluminação eficiente.</p>
+                    <div
+                        style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid #e8d82f; text-align: center;">
+                        <h3
+                            style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">
+                            Projeto em Desenvolvimento</h3>
+                        <img src="assets/img-banner.jpg" alt="Perspectiva 3D do Projeto"
+                            style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
+                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Nova paginação de piso tátil,
+                            preservação total da cobertura vegetal nativa, mobiliário urbano sustentável e iluminação
+                            eficiente.</p>
                     </div>
-                    </div>
-                    <a href="#" class="btn btn-galeria">
-                        <span>Saiba Mais</span>
-                        <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
+                </div>
+                <a href="#" class="btn btn-galeria">
+                    <span>Saiba Mais</span>
+                    <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
         </section>
 
@@ -150,10 +191,12 @@
         <section class="localizacao" id="localizacao">
             <p class="p-localizacao">ENCONTRE A PRAÇA</p>
             <h2>Venha conhecer.</h2>
-            
-            <div class="conteiner-localizacao-mapa-seguro" style="background-image: url('assets/image_uWUTif.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+            <div class="conteiner-localizacao-mapa-seguro"
+                style="background-image: url('assets/image_uWUTif.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <div class="mapa-overlay-content">
-                    <img class="mapa-icone-pin" src="assets/marcador.png" alt="Marcador Google Maps" style="width: 32px; height: auto;">
+                    <img class="mapa-icone-pin" src="assets/marcador.png" alt="Marcador Google Maps"
+                        style="width: 32px; height: auto;">
                     <h3>Mapa de Localização</h3>
                     <p>Santa Mônica, Uberlândia - MG</p>
                     <a href="https://google.com" target="_blank" class="btn-abrir-mapa-real">Abrir Rotas Interativas</a>
@@ -161,7 +204,9 @@
             </div>
 
             <h3>Como chegar de transporte público:</h3>
-            <p>A praça conta com pontos de ônibus muito próximos nas avenidas do entorno. Você pode utilizar as linhas de transporte coletivo de Uberlândia que atendem a região do Santa Mônica, como as linhas <strong>A105</strong>, <strong>T610</strong>, <strong>I231</strong> ou <strong>I232</strong>.</p>
+            <p>A praça conta com pontos de ônibus muito próximos nas avenidas do entorno. Você pode utilizar as linhas
+                de transporte coletivo de Uberlândia que atendem a região do Santa Mônica, como as linhas
+                <strong>A105</strong>, <strong>T610</strong>, <strong>I231</strong> ou <strong>I232</strong>.</p>
         </section>
 
         <!-- Seção Ajuda / Ouvidoria padronizada de acordo com o style.css -->
@@ -170,8 +215,8 @@
             <h2>Ajude-nos a melhorar a praça</h2>
             <p>Horário de Atendimento: 12h às 17h</p>
             <div class="conteiner-btn" style="justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <button onclick="window.location.href='tel:156'">Telefone da Prefeitura Uberlândia</button>
-                <button onclick="window.location.href='mailto:ouvidoria@uberlandia.mg.gov.br'">E-mail da Prefeitura Uberlândia</button>
+                <a href="tel:08009420291"><button>Telefone da Prefeitura Uberlândia</button></a>
+                <a href="mailto:ouvidoria@uberlandia.mg.gov.br"><button>E-mail da Prefeitura Uberlândia</button></a>
             </div>
         </section>
     </main>
@@ -179,7 +224,14 @@
     <footer>
         <div class="p-footer">
             <h2>Praça Américo Ferreira de Abreu</h2>
-            <p>Um espaço público dedicado ao lazer, cultura, esporte e convivência harmoniosa da comunidade de Uberlândia. Conheça nossa história e participe ativamente da preservação deste importante patrimônio verde do bairro Santa Mônica.</p>
+            <p>Um espaço público dedicado ao lazer, cultura, esporte e convivência harmoniosa da comunidade de
+                Uberlândia. Conheça nossa história e participe ativamente da preservação deste importante patrimônio
+                verde do bairro Santa Mônica.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ouvidoria%40uberlandia.mg.gov.br" target="_blank"
+                rel="noopener noreferrer"
+                style="color: #a39892; text-decoration: none;">E-mail: <span
+                    style="color: #e8d82f;">ouvidoria@uberlandia.mg.gov.br</span></a>
+            <p>Tel: <span style="color: #e8d82f;">08009420291</span></p>
             <span class="informacoes">Santa Mônica, Uberlândia - MG, 38408-166</span>
         </div>
         <div class="line"></div>
@@ -189,7 +241,8 @@
     <!-- Modal de Zoom da Logo -->
     <div id="modal-zoom-logo" class="modal-zoom caixa-oculta" onclick="fecharZoomLogo()">
         <span class="fechar-zoom">&times;</span>
-        <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada" onclick="event.stopPropagation()">
+        <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada"
+            onclick="event.stopPropagation()">
     </div>
 
     <script src="menu.js"></script>
@@ -207,4 +260,5 @@
         }
     </script>
 </body>
+
 </html>
