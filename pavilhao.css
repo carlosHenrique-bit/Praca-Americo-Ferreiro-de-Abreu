@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #e8d82f; /* Fundo geral do site: Ipê Amarelo */
+    background-size: 24px 24px;
+    color: #1a2421;
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+}
+
+.container {
+    width: 100%;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    margin: 40px 0;
+}
+
+/* Barra de Navegação Superior Escura */
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+    background-color: #5d4440; /* Fundo: Tronco do Ipê */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+/* Caixa Preta com Destaque Clicável para a Logo */
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    background-color: #000000; /* Fundo preto sólido atrás da logo */
+    padding: 8px 14px;         /* Espaçamento interno para a marca respirar */
+    border-radius: 12px;       /* Cantos arredondados sutis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra para ressaltar do fundo marrom */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: zoom-in; /* Ícone de lupa indicando que é clicável */
+}
+
+.nav-logo-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.img-prefeitura-logo {
+    width: 110px; 
+    height: auto;
+    display: block;
+}
+
+.list-nav {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(200px, 100vw);
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    background-color: rgba(93, 68, 64, 0.95); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10;
+    gap: 20px;
+}
+
+.list-escondido {
+    display: none; 
+}
+
+.list-nav a {
+    color: #ffffff;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.list-nav a:hover {
+    opacity: 0.8;
+}
+
+.btn-nav {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: #e8d82f;
+}
+
+/* Página do Pavilhão Elo: mesmas cores, tipografia e cartões do projeto. */
+html { scroll-behavior:smooth; scroll-padding-top:170px; }
+.tagline-desktop { display:none; }
+.icon-menu { width:50px; height:50px; display:block; pointer-events:none; }
+.list-nav { overflow-y:auto; }
+.list-nav a { display:block; padding:0; line-height:1.2; }
+.pavilhao-main { max-width:1200px; margin:35px auto 0; padding:0 24px; }
+.voltar { display:inline-flex; padding:12px 24px; background:#fff; color:#5d4440; border-radius:8px; font-weight:600; box-shadow:0 4px 12px #0000001a; }
+.pavilhao-card { margin:28px 0; padding:40px; background:#5d4440; color:#eaeff2; border:1px solid #ffffff1a; border-radius:20px; box-shadow:0 8px 32px #00000026; }
+.pavilhao-card h1 { color:#e8d82f; font-size:clamp(2.4rem,5vw,3.4rem); line-height:1.15; margin:12px 0 18px; }
+.pavilhao-card h2 { color:#e8d82f; font-size:clamp(1.6rem,3vw,2rem); line-height:1.3; margin:10px 0 22px; }
+.pavilhao-card p { font-size:1.08rem; line-height:1.8; margin-bottom:20px; max-width:86ch; }
+.pavilhao-card .etiqueta { font-size:.78rem; font-weight:700; letter-spacing:2px; color:#e8d82f; margin-bottom:8px; }
+.pavilhao-card .subtitulo { font-size:clamp(1.25rem,3vw,1.8rem); line-height:1.4; font-weight:600; }
+.atalhos,.acoes-finais { display:flex; gap:14px; flex-wrap:wrap; margin:26px 0; }
+.btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 24px; background:#fff; color:#5d4440; font-weight:600; border-radius:8px; line-height:1.5; }
+.btn.history { background:#aa8833; color:#fff; border:1px solid #ffffff33; }
+.btn,.voltar { transition:transform .2s,box-shadow .2s; }
+.btn:hover,.voltar:hover { transform:translateY(-2px); box-shadow:0 4px 12px #0003; }
+.foto-pavilhao { margin:26px 0 0; min-width:0; }
+.foto-pavilhao a { display:block; cursor:zoom-in; border-radius:14px; }
+.foto-pavilhao img { display:block; width:100%; height:auto; border-radius:14px; }
+.foto-pavilhao figcaption { color:#eaeff2; font-size:.9rem; line-height:1.6; margin-top:12px; }
+.ninho-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; }
+.ninho-grid .foto-pavilhao { margin:0; }
+footer { background:#1a1512; color:#fff; padding:50px 24px 20px; margin-top:60px; }
+.p-footer { max-width:1200px; margin:0 auto 30px; display:flex; flex-direction:column; gap:15px; }
+footer h2 { color:#e8d82f; font-size:1.6rem; }
+footer p { color:#a39892; line-height:1.6; max-width:700px; }
+footer .informacoes { color:#e8d82f; }
+footer .line { background:#ffffff0d; margin:25px 0; }
+footer>p { text-align:center; font-size:.9rem; margin:auto; }
+.dialog-imagem { position:fixed; inset:0; margin:auto; width:max-content; max-width:94vw; max-height:92dvh; padding:60px 18px 18px; border:1px solid #e8d82f55; border-radius:16px; background:#1a1512; color:#fff; overflow:auto; }
+.dialog-imagem::backdrop { background:#000e; }
+.dialog-imagem img { display:block; max-width:100%; max-height:70dvh; width:auto; height:auto; object-fit:contain; margin:auto; }
+.dialog-imagem p { margin-top:14px; font-size:.95rem; line-height:1.6; }
+.fechar-imagem { position:absolute; top:12px; right:16px; padding:10px 16px; background:#e8d82f; color:#5d4440; font:inherit; font-weight:700; border-radius:8px; cursor:pointer; }
+.pular-conteudo { position:fixed; top:-100px; left:16px; z-index:6000; padding:12px; background:#fff; color:#5d4440; }
+.pular-conteudo:focus { top:16px; }
+:focus-visible { outline:3px solid #fff1a6; outline-offset:5px; }
+@media(min-width:1025px) {
+    .nav-bar { display:grid; grid-template-columns:auto minmax(130px,220px) minmax(0,1fr); gap:clamp(14px,1.6vw,24px); padding:16px 20px; }
+    .img-prefeitura-logo { width:clamp(80px,8.15vw,110px); }
+    .tagline-desktop { display:block; padding-left:16px; border-left:2px solid #e8d82f; color:#fff; font-size:clamp(.66rem,.9vw,.8rem); line-height:1.4; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
+    .btn-nav { display:none; }
+    .list-nav,.list-nav.list-escondido { position:static; display:flex; flex-direction:row; justify-content:flex-end; align-items:center; width:100%; height:auto; padding:0; gap:16px; background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none; overflow:visible; }
+    .list-nav li { flex:0 0 auto; }
+    .list-nav a { width:auto; padding:12px clamp(10px,1.5vw,22px); border:2px solid #e8d82f; border-radius:8px; font-size:clamp(.8rem,1.2vw,1rem); font-weight:700; white-space:nowrap; }
+    .list-nav a:hover { opacity:1; background:#e8d82f; color:#5d4440; }
+}
+@media(max-width:1024px) { .list-nav { height:100dvh; } }
+@media(max-width:768px) { .ninho-grid { grid-template-columns:1fr; gap:10px; } }
+@media(max-width:600px) { .pavilhao-main { padding:0 16px; margin-top:24px; } .pavilhao-card { padding:26px 20px; } .pavilhao-card p { font-size:1rem; } .atalhos .btn { width:100%; } .nav-bar { padding:15px 20px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }

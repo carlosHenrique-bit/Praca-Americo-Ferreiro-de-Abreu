@@ -664,3 +664,56 @@ footer > p {
 
 
 
+
+/* Botões do header: alinhamento e tamanho consistentes. */
+.banner .conteiner-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.banner .conteiner-btn > a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 auto;
+    min-width: 148px;
+    min-height: 48px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #ffffff;
+    color: #5d4440;
+}
+
+.banner .conteiner-btn > a.btn.history {
+    background-color: #aa8833;
+    color: #ffffff;
+}
+
+.banner .conteiner-btn > a.btn:focus-visible {
+    outline: 3px solid #e8d82f;
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .banner .conteiner-btn {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .banner .conteiner-btn > a.btn {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+    }
+}

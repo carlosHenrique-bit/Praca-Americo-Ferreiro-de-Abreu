@@ -23,7 +23,7 @@
         banner.style.setProperty('--foto-evento', "linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('assets/img-banner.jpg')");
         let todos;
         try { todos = obterEventos(); }
-        catch { mensagem('Não foi possível carregar a agenda', 'O armazenamento do navegador não está disponível ou os dados salvos precisam ser verificados.'); return; }
+        catch { mensagem('Não foi possível carregar a agenda', 'Confira se o armazenamento do navegador está disponível. Os dados existentes não foram apagados.'); return; }
         eventos = todos.filter(ev => categoria === 'todos' || ev.categoria === categoria);
         if (selecionarNovo) {
             const encontrado = eventos.findIndex(ev => ev.id === selecionado);
@@ -41,10 +41,6 @@
         const local = evento.localDescricao || (evento.local === 'Outros' ? evento.outro : evento.local);
         bloco.append(tag, titulo, elemento('p', `Organizador: ${evento.nome}`),
             elemento('p', `Local: ${local || 'Não informado'} • Data: ${data}`));
-        if (evento.id === selecionado) {
-            const aviso = elemento('p', 'Evento cadastrado com sucesso neste navegador.');
-            aviso.setAttribute('role', 'status'); bloco.append(aviso);
-        }
         conteudo.replaceChildren(bloco);
         posicao.textContent = `${indice + 1}/${eventos.length}`;
         anterior.disabled = proximo.disabled = eventos.length <= 1;
@@ -63,6 +59,7 @@
         renderizar();
     }));
     window.addEventListener('pageshow', renderizar);
+    window.addEventListener('eventos-atualizados', renderizar);
     window.addEventListener('storage', event => { if (event.key === 'banco_eventos_praca' || event.key === null) renderizar(); });
     renderizar();
 })();

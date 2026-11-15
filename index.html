@@ -8,9 +8,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tablet.css">
     <link rel="stylesheet" href="notebook.css">
+    <link rel="stylesheet" href="anuncio.css">
 </head>
 
 <body>
+
+    <section id="anuncio" aria-label="Anúncios dos eventos cadastrados">
+        <a href="#eventos-cadastrados" class="anuncio-janela" aria-label="Ver eventos cadastrados">
+            <div class="anuncio-trilha"><div class="anuncio-grupo"><span class="anuncio-item">Confira os eventos cadastrados na praça.</span></div></div>
+        </a>
+        <button type="button" class="anuncio-pausa" aria-pressed="false" hidden>Pausar</button>
+    </section>
 
     <nav class="nav-bar">
         <a class="nav-logo-link" href="#" onclick="abrirZoomLogo(event)" title="Clique para ampliar a logo">
@@ -30,7 +38,7 @@
             </svg></button>
         <ul class="list-nav list-escondido">
             <li><a href="historia.html">História</a></li>
-            <li><a href="#pavilhao">Pavilhão</a></li>
+            <li><a href="pavilhao.html">Pavilhão</a></li>
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#localizacao">Localização</a></li>
             <li><a href="#ajuda">Ajuda</a></li>
@@ -114,33 +122,23 @@
             </div>
         </section>
         <!-- MODIFICADO: Pavilhão usando a estrutura flex e ID nativo idêntico à seção História para não quebrar -->
-        <section id="pavilhao"
-            style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 40px; padding: 50px 30px; max-width: 1200px; margin: 30px auto; background-color: #5d4440; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+        <section id="pavilhao" class="eventos-section">
             <div class="conteiner-paragrafo">
-                <h2 style="font-size: 2rem; color: #e8d82f; margin-bottom: 20px;">Pavilhão Multiuso de Apoio</h2>
-                <p style="font-size: 1.1rem; line-height: 1.6; color: #eaeff2; margin-bottom: 24px;">
-                    Como elemento central da proposta de requalificação urbana desenvolvida pela <strong>Elo Arquitetura
-                        e Urbanismo</strong>, o novo pavilhão foi concebido para dar suporte logístico e infraestrutura
-                    técnica adequada às festividades tradicionais do bairro Santa Mônica.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
-                            style="color: #e8d82f;">Estrutura Leve e Sustentável:</strong> Cobertura modular projetada
-                        para captação de água pluvial e proteção solar, gerando conforto térmico sem agredir a vegetação
-                        arbórea existente.</p>
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
-                            style="color: #e8d82f;">Infraestrutura Técnica:</strong> Pontos embutidos de energia
-                        elétrica, iluminação em LED cenográfica e conexões hidráulicas planejadas para atender barracas
-                        de feiras e palcos temporários.</p>
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.5; color: #eaeff2;"><strong
-                            style="color: #e8d82f;">Acessibilidade Universal:</strong> Piso plano intertravado tátil
-                        integrado às rotas principais da praça, facilitando a circulação de pedestres, idosos e
-                        cadeirantes em dias de grande fluxo.</p>
-                </div>
+                <h2>Pavilhão Elo</h2>
+                <p class="agenda-aviso">Inspirado no joão-de-barro, o projeto de aproximadamente 350 m² propõe um abrigo duradouro para a arte e a cultura. A cobertura orgânica e o ipê integrado aproximam a arquitetura das referências do Cerrado.</p>
+                <p class="agenda-aviso">Conheça a Sala Ninho, seus cobogós de terracota e o resfriamento natural, além do pátio aberto que se conecta à concha acústica para receber exposições, encontros e apresentações.</p>
+                <a href="pavilhao.html" class="btn btn-galeria" aria-label="Saiba mais sobre o Pavilhão Elo">
+                    <span>Saiba Mais</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
-            <div class="conteiner-img-praca">
-                <img id="img-praca" src="assets/img-banner.jpg" alt="Conceito do Pavilhão">
-            </div>
+            <figure style="margin:28px 0 0;">
+                <a href="pavilhao.html" aria-label="Conhecer o projeto do Pavilhão Elo"><img src="assets/pavilhao-vista-geral.jpg" alt="Perspectiva do Pavilhão Elo com ipê integrado e pátio cultural" loading="lazy" style="display:block; width:100%; height:auto; border-radius:14px;"></a>
+                <figcaption style="color:#eaeff2; font-size:.9rem; line-height:1.6; margin-top:12px;">Perspectiva do projeto Pavilhão Elo.</figcaption>
+            </figure>
         </section>
 
         <!-- Seção Galeria Comparativa usando as classes corretas do style.css -->
@@ -227,6 +225,7 @@
             <p>Um espaço público dedicado ao lazer, cultura, esporte e convivência harmoniosa da comunidade de
                 Uberlândia. Conheça nossa história e participe ativamente da preservação deste importante patrimônio
                 verde do bairro Santa Mônica.</p>
+                <img src="./assets/logo-prefeitura.png" alt="logo-prefeitura" style="width: 180px; height: 70px;">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ouvidoria%40uberlandia.mg.gov.br" target="_blank"
                 rel="noopener noreferrer"
                 style="color: #a39892; text-decoration: none;">E-mail: <span
@@ -248,6 +247,7 @@
     <script src="menu.js"></script>
     <script src="dados-eventos.js"></script>
     <script src="eventos.js"></script>
+    <script src="anuncio.js"></script>
     <script>
         function abrirZoomLogo(event) {
             if (event) event.preventDefault();

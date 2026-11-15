@@ -1,0 +1,25 @@
+/* Faixa de eventos acima da navegação. */
+#anuncio {
+    display:flex; align-items:center; gap:8px; width:100%; height:36px;
+    background:#e8d82f; color:#5d4440; border-bottom:1px solid #5d444033;
+    padding:0 12px; overflow:hidden; box-sizing:border-box;
+}
+.anuncio-janela { display:block; flex:1; min-width:0; overflow:hidden; color:inherit; text-decoration:none; }
+.anuncio-trilha { display:flex; width:max-content; white-space:nowrap; will-change:transform; }
+.anuncio-grupo { display:flex; flex:none; align-items:center; white-space:nowrap; }
+.anuncio-item { display:inline-flex; align-items:center; flex:none; padding:0 24px 0 0; font-size:13px; line-height:36px; font-weight:600; color:#5d4440; }
+.anuncio-item::after { content:'•'; padding-left:24px; color:#5d4440; }
+.anuncio-animado .anuncio-trilha { animation:anuncio-deslizar var(--anuncio-duracao,35s) linear infinite; }
+#anuncio.anuncio-pausado .anuncio-trilha,
+#anuncio:hover .anuncio-trilha,
+#anuncio:focus-within .anuncio-trilha { animation-play-state:paused; }
+.anuncio-pausa { flex:none; height:28px; min-width:62px; padding:0 8px; border:1px solid #5d444066; border-radius:6px; background:transparent; color:#5d4440; font:600 12px 'Segoe UI',sans-serif; cursor:pointer; }
+.anuncio-pausa[hidden] { display:none; }
+.anuncio-janela:focus-visible,.anuncio-pausa:focus-visible { outline:2px solid #5d4440; outline-offset:1px; }
+@keyframes anuncio-deslizar { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@media(prefers-reduced-motion:reduce) {
+    .anuncio-animado .anuncio-trilha { animation:none; transform:none; }
+    .anuncio-janela { overflow-x:auto; scrollbar-width:none; }
+    .anuncio-janela::-webkit-scrollbar { display:none; }
+    .anuncio-item { font-size:12px; }
+}
