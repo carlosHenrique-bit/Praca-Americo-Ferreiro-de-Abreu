@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar seu evento | Praça Américo Ferreira de Abreu</title>
     <link rel="stylesheet" href="formulario.css">
 </head>
+
 <body class="container">
 
     <nav class="nav-bar">
         <a class="nav-logo-link" href="#" onclick="abrirZoomLogo(event)" title="Clique para ampliar a logo">
             <img class="img-prefeitura-logo" src="assets/logo-elo.png" alt="Elo Arquitetura e Urbanismo Logo">
         </a>
-        
+
         <span class="tagline-desktop">
             Projetos Urbanos Sustentáveis • Santa Mônica
         </span>
 
-        <button id="botao-menu" class="btn-nav" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button>
-        <ul class="list-nav list-escondido" id="menu-principal"><li><a href="historia.html">História</a></li><li><a href="pavilhao.html">Pavilhão</a></li><li><a href="index.html#galeria">Galeria</a></li><li><a href="index.html#localizacao">Localização</a></li><li><a href="index.html#ajuda">Ajuda</a></li><li><a href="formulario.html">Eventos</a></li></ul>
+        <button id="botao-menu" class="btn-nav" type="button" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="menu-principal"><svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+            </svg></button>
+        <ul class="list-nav list-escondido" id="menu-principal">
+            <li><a href="historia.html">História</a></li>
+            <li><a href="pavilhao.html">Pavilhão</a></li>
+            <li><a href="index.html#galeria">Galeria</a></li>
+            <li><a href="index.html#localizacao">Localização</a></li>
+            <li><a href="formulario.html">Eventos</a></li>
+            <li><a href="index.html#ajuda">Ajuda</a></li>
+        </ul>
     </nav>
 
     <main class="formulario-main">
         <!-- MODIFICADO: Cores invertidas para o botão de voltar ficar muito mais visível -->
         <div style="margin-bottom: 25px;">
-            <a href="index.html" class="voltar" 
-               style="display: inline-block; padding: 12px 24px; background-color: #ffffff; color: #5d4440; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.2s ease;"
-               onmouseover="this.style.backgroundColor='#e8d82f'; this.style.transform='translateY(-2px)';" 
-               onmouseout="this.style.backgroundColor='#ffffff'; this.style.transform='translateY(0)';">
+            <a href="index.html" class="voltar"
+                style="display: inline-block; padding: 12px 24px; background-color: #ffffff; color: #5d4440; border-radius: 8px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.2s ease;"
+                onmouseover="this.style.backgroundColor='#e8d82f'; this.style.transform='translateY(-2px)';"
+                onmouseout="this.style.backgroundColor='#ffffff'; this.style.transform='translateY(0)';">
                 ← Voltar para a praça
             </a>
         </div>
-        
+
         <div class="formulario-card">
             <h1>Seu próximo encontro começa aqui.</h1>
             <p class="formulario-intro">Informe os detalhes do evento que você pretende realizar na praça.</p>
@@ -79,7 +95,8 @@
                     <input type="text" id="outro" placeholder="Especifique o local...">
                 </div>
 
-                <p class="formulario-nota">Ao enviar, o evento será salvo neste navegador e exibido na seção Eventos Cadastrados da página inicial. O cadastro não confirma reserva nem autorização de uso da praça.</p>
+                <p class="formulario-nota">Ao enviar, o evento será salvo neste navegador e exibido na seção Eventos
+                    Cadastrados da página inicial. O cadastro não confirma reserva nem autorização de uso da praça.</p>
 
                 <p id="form-erro" class="caixa-oculta"></p>
 
@@ -92,13 +109,16 @@
     </main>
 
     <!-- Caixas de Mensagem Ocultas / Feedback -->
-    <div id="erro-campos" class="mensagem-erro caixa-oculta">Preencha todos os campos corretamente. Clique nesta mensagem para fechar.</div>
-    <div id="erro-evento" class="mensagem-erro caixa-oculta">Já existe outro evento nesse dia, horário e local. Escolha outro horário ou local. Clique para fechar.</div>
+    <div id="erro-campos" class="mensagem-erro caixa-oculta">Preencha todos os campos corretamente. Clique nesta
+        mensagem para fechar.</div>
+    <div id="erro-evento" class="mensagem-erro caixa-oculta">Já existe outro evento nesse dia, horário e local. Escolha
+        outro horário ou local. Clique para fechar.</div>
 
     <!-- Modal de Zoom da Logo -->
     <div id="modal-zoom-logo" class="modal-zoom caixa-oculta" onclick="fecharZoomLogo()">
         <span class="fechar-zoom">&times;</span>
-        <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada" onclick="event.stopPropagation()">
+        <img class="img-zoom-conteudo" src="assets/logo-elo.png" alt="Logo Elo Ampliada"
+            onclick="event.stopPropagation()">
     </div>
 
     <script src="dados-eventos.js"></script>
@@ -114,35 +134,34 @@
             document.body.style.overflow = 'auto';
         }
     </script>
-<script>
-(() => {
-    const botao = document.getElementById('botao-menu');
-    const lista = document.getElementById('menu-principal');
-    if (!botao || !lista) return;
-    const fechar = () => {
-        lista.classList.add('list-escondido');
-        botao.setAttribute('aria-expanded', 'false');
-        botao.setAttribute('aria-label', 'Abrir menu');
-    };
-    botao.addEventListener('click', () => {
-        const aberto = lista.classList.contains('list-escondido');
-        lista.classList.toggle('list-escondido', !aberto);
-        botao.setAttribute('aria-expanded', String(aberto));
-        botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
-    });
-    document.addEventListener('click', event => {
-        if (!lista.contains(event.target) && !botao.contains(event.target)) fechar();
-    });
-    document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && !lista.classList.contains('list-escondido')) {
-            fechar(); botao.focus();
-        }
-    });
-    lista.querySelectorAll('a').forEach(link => link.addEventListener('click', fechar));
-    window.matchMedia('(min-width: 1025px)').addEventListener('change', fechar);
-})();
-</script>
+    <script>
+        (() => {
+            const botao = document.getElementById('botao-menu');
+            const lista = document.getElementById('menu-principal');
+            if (!botao || !lista) return;
+            const fechar = () => {
+                lista.classList.add('list-escondido');
+                botao.setAttribute('aria-expanded', 'false');
+                botao.setAttribute('aria-label', 'Abrir menu');
+            };
+            botao.addEventListener('click', () => {
+                const aberto = lista.classList.contains('list-escondido');
+                lista.classList.toggle('list-escondido', !aberto);
+                botao.setAttribute('aria-expanded', String(aberto));
+                botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+            });
+            document.addEventListener('click', event => {
+                if (!lista.contains(event.target) && !botao.contains(event.target)) fechar();
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && !lista.classList.contains('list-escondido')) {
+                    fechar(); botao.focus();
+                }
+            });
+            lista.querySelectorAll('a').forEach(link => link.addEventListener('click', fechar));
+            window.matchMedia('(min-width: 1025px)').addEventListener('change', fechar);
+        })();
+    </script>
 </body>
+
 </html>
-
-

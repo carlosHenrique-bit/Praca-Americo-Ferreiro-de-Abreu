@@ -39,10 +39,10 @@
         <ul class="list-nav list-escondido">
             <li><a href="historia.html">História</a></li>
             <li><a href="pavilhao.html">Pavilhão</a></li>
-            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
             <li><a href="#localizacao">Localização</a></li>
-            <li><a href="#ajuda">Ajuda</a></li>
             <li><a href="formulario.html">Eventos</a></li>
+            <li><a href="#ajuda">Ajuda</a></li>
         </ul>
     </nav>
 
@@ -143,45 +143,23 @@
 
         <!-- Seção Galeria Comparativa usando as classes corretas do style.css -->
         <section id="galeria" class="eventos-section">
-            <h2>Evolução do Espaço Urbano</h2>
-            <p class="agenda-aviso">Compare o levantamento fotográfico do estado atual com o modelo tridimensional das
-                melhorias propostas.</p>
+            <h2>Uma praça mais inclusiva</h2>
+            <p class="agenda-aviso">A revitalização propõe um parque infantil com acessibilidade motora e sensorial e uma academia ao ar livre para pessoas de diferentes idades e condições motoras. Brinquedos adaptados, áreas de descompressão, pisos nivelados e integração com a natureza buscam promover autonomia, convivência e bem-estar.</p>
+            <p class="agenda-aviso">Compare o estado atual com as perspectivas do projeto e conheça a proposta completa.</p>
             <div class="cotainer-galery">
-                <div
-                    style="display: flex; flex-direction: row; gap: 25px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
-                    <!-- Bloco Estado Atual -->
-                    <div
-                        style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
-                        <h3
-                            style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">
-                            Estado Atual da Praça</h3>
-                        <img src="assets/img-banner.jpg" alt="Foto Atual da Praça"
-                            style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
-                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Diagnóstico de calçadas
-                            danificadas, áreas com desgaste de solo e pontos escuros com necessidade de reforço
-                            luminotécnico.</p>
-                    </div>
-                    <!-- Bloco Projeto em Desenvolvimento -->
-                    <div
-                        style="flex: 1; min-width: 290px; max-width: 500px; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid #e8d82f; text-align: center;">
-                        <h3
-                            style="color: #e8d82f; margin-bottom: 15px; text-transform: uppercase; font-size: 1rem; letter-spacing: 1px; font-weight: 700;">
-                            Projeto em Desenvolvimento</h3>
-                        <img src="assets/img-banner.jpg" alt="Perspectiva 3D do Projeto"
-                            style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 15px;">
-                        <p style="font-size: 0.95rem; color: #eaeff2; line-height: 1.5;">Nova paginação de piso tátil,
-                            preservação total da cobertura vegetal nativa, mobiliário urbano sustentável e iluminação
-                            eficiente.</p>
-                    </div>
+                <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; width:100%; margin-top:20px;">
+                    <figure style="flex:1 1 260px; min-width:0; width:100%; max-width:500px; background:rgba(255,255,255,.05); padding:20px; border-radius:16px; border:1px solid rgba(255,255,255,.1);">
+                        <figcaption style="color:#e8d82f; font-size:1rem; font-weight:700; margin-bottom:16px;">ANTES · ESTADO ATUAL</figcaption>
+                        <a href="galeria.html"><img src="assets/galeria/praca-atual-05.jpg" alt="Fotografia atual da área de brinquedos da praça" loading="lazy" style="display:block; width:100%; height:300px; object-fit:contain; background:#211b19; border-radius:10px;"></a>
+                        <p class="agenda-aviso" style="font-size:.95rem; margin:14px 0 0;">Área de brinquedos existente na praça.</p>
+                    </figure>
+                    <figure style="flex:1 1 260px; min-width:0; width:100%; max-width:500px; background:rgba(255,255,255,.05); padding:20px; border-radius:16px; border:1px solid #e8d82f;">
+                        <figcaption style="color:#e8d82f; font-size:1rem; font-weight:700; margin-bottom:16px;">DEPOIS · PROPOSTA</figcaption>
+                        <a href="galeria.html"><img src="assets/galeria/projeto-playground.jpg" alt="Perspectiva do playground proposto para a revitalização" loading="lazy" style="display:block; width:100%; height:300px; object-fit:contain; background:#211b19; border-radius:10px;"></a>
+                        <p class="agenda-aviso" style="font-size:.95rem; margin:14px 0 0;">Perspectiva do playground; a proposta prevê recursos inclusivos e sensoriais.</p>
+                    </figure>
                 </div>
-                <a href="#" class="btn btn-galeria">
-                    <span>Saiba Mais</span>
-                    <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
+                <a href="galeria.html" class="btn btn-galeria"><span>Saiba Mais</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
         </section>
 
@@ -197,7 +175,7 @@
                         style="width: 32px; height: auto;">
                     <h3>Mapa de Localização</h3>
                     <p>Santa Mônica, Uberlândia - MG</p>
-                    <a href="https://google.com" target="_blank" class="btn-abrir-mapa-real">Abrir Rotas Interativas</a>
+                    <a href="https://maps.app.goo.gl/HqqFE8UBgAaCkM458" target="_blank" class="btn-abrir-mapa-real">Abrir Rotas Interativas</a>
                 </div>
             </div>
 
@@ -262,3 +240,4 @@
 </body>
 
 </html>
+
